@@ -2,7 +2,11 @@
 
 React Time Picker Control.
 
-Based on http://react-component.github.io/time-picker/
+Based on https://github.com/react-component/time-picker
+
+## Live demo: 
+
+https://uncledent.github.io/time-picker
 
 It was reworked to be able to navigate between pickers with tabs and auto open the dropdowns.
 
