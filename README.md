@@ -2,6 +2,8 @@
 
 React Time Picker Control.
 
+![Preview](https://res.cloudinary.com/dfzdapo2m/image/upload/v1593695069/preview_picker_n2r5z0.png)
+
 Based on https://github.com/react-component/time-picker
 
 ## Live demo: 
