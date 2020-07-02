@@ -54,13 +54,14 @@ class Select extends Component {
         [`${prefixCls}-select-option-disabled`]: item.disabled,
       });
       const onClick = item.disabled
-        ? undefined
+        ? () => {}
         : () => {
             this.onSelect(item.value);
           };
       const onKeyDown = e => {
         if (e.keyCode === 13) onClick();
         else if (e.keyCode === 27) onEsc();
+        else if (e.keyCode === 9) onEsc(); // on tab
       };
       return (
         <li

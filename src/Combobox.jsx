@@ -27,6 +27,7 @@ class Combobox extends Component {
       value: propValue,
       isAM,
       onAmPmChange,
+      onSelection,
     } = this.props;
     const value = (propValue || defaultOpenValue).clone();
 
@@ -60,6 +61,7 @@ class Combobox extends Component {
       value.second(+itemValue);
     }
     onChange(value);
+    onSelection();
   };
 
   onEnterSelectPanel = range => {
@@ -68,7 +70,14 @@ class Combobox extends Component {
   };
 
   getHourSelect(hour) {
-    const { prefixCls, hourOptions, disabledHours, showHour, use12Hours, onEsc } = this.props;
+    const {
+      prefixCls,
+      hourOptions,
+      disabledHours,
+      showHour,
+      use12Hours,
+      onEsc,
+    } = this.props;
     if (!showHour) {
       return null;
     }
@@ -86,7 +95,9 @@ class Combobox extends Component {
     return (
       <Select
         prefixCls={prefixCls}
-        options={hourOptionsAdj.map(option => formatOption(option, disabledOptions))}
+        options={hourOptionsAdj.map(option =>
+          formatOption(option, disabledOptions),
+        )}
         selectedIndex={hourOptionsAdj.indexOf(hourAdj)}
         type="hour"
         onSelect={this.onItemChange}
@@ -115,7 +126,9 @@ class Combobox extends Component {
     return (
       <Select
         prefixCls={prefixCls}
-        options={minuteOptions.map(option => formatOption(option, disabledOptions))}
+        options={minuteOptions.map(option =>
+          formatOption(option, disabledOptions),
+        )}
         selectedIndex={minuteOptions.indexOf(minute)}
         type="minute"
         onSelect={this.onItemChange}
@@ -144,7 +157,9 @@ class Combobox extends Component {
     return (
       <Select
         prefixCls={prefixCls}
-        options={secondOptions.map(option => formatOption(option, disabledOptions))}
+        options={secondOptions.map(option =>
+          formatOption(option, disabledOptions),
+        )}
         selectedIndex={secondOptions.indexOf(second)}
         type="second"
         onSelect={this.onItemChange}

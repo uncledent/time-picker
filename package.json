@@ -1,6 +1,6 @@
 {
-  "name": "rc-time-picker",
-  "version": "4.0.0-alpha.3",
+  "name": "react-awesome-time-picker",
+  "version": "1.0.0",
   "description": "React TimePicker",
   "keywords": [
     "react",
@@ -21,33 +21,36 @@
   ],
   "main": "lib/index",
   "module": "es/index",
-  "homepage": "http://github.com/react-component/time-picker",
-  "author": "wuzhao.mail@gmail.com",
+  "homepage": "https://github.com/uncledent/time-picker",
+  "author": "danny@delar.de",
   "repository": {
     "type": "git",
-    "url": "git@github.com:react-component/time-picker.git"
+    "url": "git@github.com:uncledent/time-picker.git"
   },
   "bugs": {
-    "url": "http://github.com/react-component/time-picker/issues"
+    "url": "https://github.com/uncledent/time-picker/issues"
   },
   "license": "MIT",
   "dependencies": {
     "classnames": "2.x",
-    "moment": "2.x",
+    "moment": "2.26.0",
     "raf": "^3.4.1",
-    "rc-trigger": "^4.0.0-alpha.8"
+    "rc-trigger": "4.3.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.0",
     "enzyme": "^3.8.0",
     "enzyme-to-json": "^3.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "father": "^2.24.1",
     "np": "^6.0.0",
-    "rc-util": "^4.11.0"
+    "rc-util": "^4.11.0",
+    "watch": "^1.0.2"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development father doc dev --storybook",
@@ -58,6 +61,7 @@
     "lint": "eslint src/ examples/ --ext .tsx,.ts,.jsx,.js",
     "test": "father test",
     "coverage": "father test --coverage",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "watch": "watch 'npm run compile'"
   }
 }

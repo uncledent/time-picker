@@ -2,45 +2,24 @@
 
 React Time Picker Control.
 
-[![NPM version][npm-image]][npm-url]
-[![build status][circleci-image]][circleci-url]
-[![Test coverage][coveralls-image]][coveralls-url]
-[![Dependencies](https://img.shields.io/david/react-component/time-picker.svg?style=flat-square)](https://david-dm.org/react-component/time-picker)
-[![DevDependencies](https://img.shields.io/david/dev/react-component/time-picker.svg?style=flat-square)](https://david-dm.org/react-component/time-picker?type=dev)
-[![npm download][download-image]][download-url]
-[![Storybook](https://gw.alipayobjects.com/mdn/ob_info/afts/img/A*CQXNTZfK1vwAAAAAAAAAAABjAQAAAQ/original)](https://github.com/react-component/time-picker)
+Based on http://react-component.github.io/time-picker/
 
-[Storybook]: https://github.com/storybooks/press/blob/master/badges/storybook.svg
-[npm-image]: http://img.shields.io/npm/v/rc-time-picker.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/rc-time-picker
-[circleci-image]: https://img.shields.io/circleci/react-component/time-picker.svg?style=flat-square
-[circleci-url]: https://circleci.com/gh/react-component/time-picker
-[coveralls-image]: https://img.shields.io/coveralls/react-component/time-picker.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-component/time-picker?branch=maste
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/rc-time-picker.svg?style=flat-square
-[download-url]: https://npmjs.org/package/rc-time-picker
-
-example
---------
-
-http://react-component.github.io/time-picker/
+It was reworked to be able to navigate between pickers with tabs and auto open the dropdowns.
 
 install
 -------
 
 ```
-npm install rc-time-picker
+npm install react-awesome-time-picker
 ```
 
 Usage
 -----
 
 ```
-import TimePicker from 'rc-time-picker';
+import TimePicker from 'react-awesome-time-picker';
 import ReactDOM from 'react-dom';
-import 'rc-time-picker/assets/index.css';
+import 'react-awesome-time-picker/assets/index.css';
 ReactDOM.render(<TimePicker />, container);
 ```
 
@@ -51,7 +30,7 @@ API
 
 | Name                    | Type                              | Default | Description |
 |-------------------------|-----------------------------------|---------|-------------|
-| prefixCls               | String                            | 'rc-time-picker' | prefixCls of this component |
+| prefixCls               | String                            | 'react-awesome-time-picker' | prefixCls of this component |
 | clearText               | String                            | 'clear' | clear tooltip of icon |
 | disabled                | Boolean                           | false   | whether picker is disabled |
 | allowEmpty              | Boolean                           | true | allow clearing text |
@@ -107,4 +86,4 @@ open coverage/ dir
 License
 -------
 
-rc-time-picker is released under the MIT license.
+react-awesome-time-picker is released under the MIT license.

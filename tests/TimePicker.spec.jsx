@@ -17,6 +17,7 @@ describe('TimePicker', () => {
         format={format}
         showSecond={showSecond}
         defaultValue={moment('12:57:58', format)}
+        autocomplete="off"
         {...props}
       />,
       options,
@@ -56,7 +57,6 @@ describe('TimePicker', () => {
       expect(picker.state().open).toBeFalsy();
       matchValue(picker, '12:57:58');
       clickInput(picker);
-
       expect(picker.state().open).toBeTruthy();
       clickSelectItem(picker, 0, 1);
 
@@ -86,7 +86,9 @@ describe('TimePicker', () => {
       const picker = renderPicker({
         name: 'time-picker-form-name',
       });
-      expect(picker.find('.rc-time-picker-input').instance().name).toBe('time-picker-form-name');
+      expect(picker.find('.rc-time-picker-input').instance().name).toBe(
+        'time-picker-form-name',
+      );
     });
 
     it('support focus', () => {
@@ -108,6 +110,7 @@ describe('TimePicker', () => {
     it('support custom icon', () => {
       const picker = renderPicker({
         inputIcon: 'test-select',
+        value: null,
       });
       expect(picker.find('.rc-time-picker').text()).toBe('test-select');
     });
@@ -171,7 +174,7 @@ describe('TimePicker', () => {
       });
       expect(picker.state().open).toBeFalsy();
       picker.find('.rc-time-picker-input').simulate('focus');
-      expect(picker.state().open).toBeFalsy();
+      expect(picker.state().open).toBeTruthy();
       picker.find('.rc-time-picker-input').simulate('blur');
 
       expect(focus).toBeTruthy();
@@ -183,8 +186,20 @@ describe('TimePicker', () => {
     it('should allow clear', async () => {
       const picker = renderPicker({
         allowEmpty: true,
+        autoComplete: 'off',
       });
-      expect(picker.render()).toMatchSnapshot();
+      expect(picker.exists('.rc-time-picker-clear')).toBeTruthy();
+      expect(picker.exists('.rc-time-picker-input-icon')).toBeFalsy();
+    });
+
+    it('should not render clear', async () => {
+      const picker = renderPicker({
+        allowEmpty: true,
+        autoComplete: 'off',
+        value: null,
+      });
+      expect(picker.exists('.rc-time-picker-clear')).toBeFalsy();
+      expect(picker.exists('.rc-time-picker-input-icon')).toBeTruthy();
     });
 
     it('cannot allow clear when disabled', async () => {
@@ -192,7 +207,8 @@ describe('TimePicker', () => {
         allowEmpty: true,
         disabled: true,
       });
-      expect(picker.render()).toMatchSnapshot();
+      expect(picker.exists('.rc-time-picker-clear')).toBeFalsy();
+      expect(picker.exists('.rc-time-picker-input-icon')).toBeFalsy();
     });
   });
 });

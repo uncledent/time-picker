@@ -3,7 +3,13 @@ import React from 'react';
 import { mount } from 'enzyme';
 import moment from 'moment';
 import TimePicker from '../src/TimePicker';
-import { clickInput, clickSelectItem, matchValue, matchAll, escapeSelected } from './util';
+import {
+  clickInput,
+  clickSelectItem,
+  matchValue,
+  matchAll,
+  escapeSelected,
+} from './util';
 
 describe('Select', () => {
   let container;

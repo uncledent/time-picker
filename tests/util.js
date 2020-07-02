@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 export function clickInput(picker) {
-  picker.find('.rc-time-picker-input').simulate('click');
+  picker.find('.rc-time-picker-input').simulate('focus');
 }
 
 export function blurInput(picker) {
@@ -23,10 +23,6 @@ export function clickSelectItem(picker, select, index) {
     .simulate('click');
 }
 
-export function findHeader(picker) {
-  return picker.find('.rc-time-picker-panel-input');
-}
-
 export function matchValue(picker, str) {
   // Input
   expect(picker.find('.rc-time-picker-input').instance().value).toBe(str);
@@ -39,7 +35,5 @@ export function matchAll(picker, str, str2) {
     return;
   }
 
-  // Header
-  expect(findHeader(picker).instance().value).toBe(str);
   matchValue(picker, str2 || str);
 }

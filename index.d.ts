@@ -1,7 +1,10 @@
-declare module "rc-time-picker" {
-  import { Moment } from "moment";
-  import * as React from "react";
+declare module 'react-awesome-time-picker' {
+  import { Moment } from 'moment';
+  import * as React from 'react';
 
+  class Panel extends React.Component<unknown> {
+    close(): void;
+  }
   type TimePickerProps = {
     prefixCls?: string;
     clearText?: string;
@@ -50,9 +53,7 @@ declare module "rc-time-picker" {
   };
   export default class TimePicker extends React.Component<TimePickerProps> {
     focus(): void;
+
     blur(): void;
-  }
-  class Panel extends React.Component<unknown> {
-    close(): void;
   }
 }
