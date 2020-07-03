@@ -19,6 +19,9 @@
     "assets/*.less",
     "index.d.ts"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "main": "lib/index",
   "module": "es/index",
   "homepage": "https://github.com/uncledent/time-picker",
