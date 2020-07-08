@@ -20,7 +20,7 @@
     "index.d.ts"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npmjs.com/"
   },
   "main": "lib/index",
   "module": "es/index",
