@@ -149,7 +149,7 @@ class Picker extends Component {
     if ('value' in props) {
       const { value } = props;
       const { value: oldVal } = state;
-      if (!oldVal && !!value) {
+      if (value !== oldVal) {
         newState.value = value;
         newState.str = (value && value.format(getFormat(props))) || '';
       }
